@@ -1,0 +1,45 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from Student_Service_ImplService WSDL service -->
+
+  <service name="Student_Service_Impl" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://serice_impl"/>
+      <parameter name="wsdlServiceElement" value="Student_Service_ImplService"/>
+      <parameter name="schemaQualified" value="http://serice_impl,http://module"/>
+      <parameter name="wsdlServicePort" value="Student_Service_Impl"/>
+      <parameter name="className" value="serice_impl.Student_Service_ImplSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="Student_Service_Impl"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="delete" qname="operNS:delete" xmlns:operNS="http://serice_impl" returnQName="retNS:deleteReturn" xmlns:retNS="http://serice_impl" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:id" xmlns:pns="http://serice_impl" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="insert" qname="operNS:insert" xmlns:operNS="http://serice_impl" returnQName="retNS:insertReturn" xmlns:retNS="http://serice_impl" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:id" xmlns:pns="http://serice_impl" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:name" xmlns:pns="http://serice_impl" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:age" xmlns:pns="http://serice_impl" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="search" qname="operNS:search" xmlns:operNS="http://serice_impl" returnQName="retNS:searchReturn" xmlns:retNS="http://serice_impl" returnType="rtns:Student" xmlns:rtns="http://module" soapAction="" >
+        <parameter qname="pns:id" xmlns:pns="http://serice_impl" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="search insert delete"/>
+
+      <typeMapping
+        xmlns:ns="http://module"
+        qname="ns:Student"
+        type="java:module.Student"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

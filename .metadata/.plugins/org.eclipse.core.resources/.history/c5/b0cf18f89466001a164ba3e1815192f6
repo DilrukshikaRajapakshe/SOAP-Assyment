@@ -1,0 +1,53 @@
+package serice_impl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import service.Student_Service;
+import module.Student;
+
+public class Student_Service_Impl implements Student_Service {
+
+	private static final List<Student> List = new ArrayList<>();
+	
+	@Override
+	public boolean insert(int id, String name, int age) {
+		Student s = new Student(id, name, age);
+		List.add(s);
+		if(List.isEmpty())
+			return false;
+		else
+			return true;
+	}
+
+	@Override
+	public String search(int id) {
+		List.add(new Student(1,"Saman",12));
+		List.add(new Student(2,"Nimal",14));
+		List.add(new Student(3,"Kamal",15));
+		List.add(new Student(4,"Malith",23));
+		List.add(new Student(5,"Tharidu",10));
+		String name = null;
+		for(int a=0; a< List.size(); a++) {
+			 if(List.get(a).getId() == id) {
+				 name =  List.get(a).getName();
+			 }		 
+		} 
+		return name;
+	}
+
+	@Override
+	public boolean delete(int id) {
+		List.add(new Student(1,"Saman",12));
+		List.add(new Student(2,"Nimal",14));
+		List.add(new Student(3,"Kamal",15));
+		List.add(new Student(4,"Malith",23));
+		List.add(new Student(5,"Tharidu",10));
+		if (List.removeIf(s -> s.getId() == id)) {
+			return true;
+		} else {
+			return false;
+		} 
+	}
+
+}
