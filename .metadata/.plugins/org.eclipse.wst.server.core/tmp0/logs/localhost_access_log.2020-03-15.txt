@@ -88,3 +88,5 @@
 127.0.0.1 - - [15/Mar/2020:16:09:04 +0530] "POST /Student_Ragistation/services/Student_Service_Impl HTTP/1.1" 200 366
 127.0.0.1 - - [15/Mar/2020:16:09:43 +0530] "POST /Student_Ragistation/services/Student_Service_Impl HTTP/1.1" 200 366
 127.0.0.1 - - [15/Mar/2020:16:10:06 +0530] "POST /Student_Ragistation/services/Student_Service_Impl HTTP/1.1" 200 403
+127.0.0.1 - - [15/Mar/2020:16:18:14 +0530] "GET /Student_Ragistation/services/Student_Service_Impl?WSDL HTTP/1.1" 200 5484
+127.0.0.1 - - [15/Mar/2020:16:18:14 +0530] "GET /Student_Ragistation/services/Student_Service_Impl?WSDL HTTP/1.1" 200 5484
