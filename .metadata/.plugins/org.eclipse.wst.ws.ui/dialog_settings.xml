@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="0/org.eclipse.jst.ws.wsImpl.java">
+		<item value="serice_impl.Student_Service_Impl"/>
+		<item value="service.Student_Service"/>
+	</list>
+</section>

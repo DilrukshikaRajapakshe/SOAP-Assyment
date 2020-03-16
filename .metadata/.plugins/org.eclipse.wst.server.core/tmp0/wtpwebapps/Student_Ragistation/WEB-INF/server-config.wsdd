@@ -7,8 +7,8 @@
   <ns1:parameter name="dotNetSoapEncFix" value="true"/>
   <ns1:parameter name="enableNamespacePrefixOptimization" value="false"/>
   <ns1:parameter name="sendXMLDeclaration" value="true"/>
-  <ns1:parameter name="sendXsiTypes" value="true"/>
   <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
+  <ns1:parameter name="sendXsiTypes" value="true"/>
   <ns1:requestFlow>
    <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
     <ns1:parameter name="scope" value="session"/>
@@ -44,7 +44,8 @@
   <ns1:operation name="search" qname="ns3:search" returnQName="ns3:searchReturn" returnType="ns4:Student" soapAction="" xmlns:ns3="http://serice_impl" xmlns:ns4="http://module">
    <ns1:parameter qname="ns3:id" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
   </ns1:operation>
-  <ns1:parameter name="allowedMethods" value="search insert delete"/>
+  <ns1:operation name="findAll" qname="ns5:findAll" returnQName="ns5:findAllReturn" returnType="ns6:Student" soapAction="" xmlns:ns5="http://serice_impl" xmlns:ns6="http://module"/>
+  <ns1:parameter name="allowedMethods" value="search insert delete findAll"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="Student_Service_Impl"/>
   <ns1:parameter name="className" value="serice_impl.Student_Service_Impl"/>
@@ -52,7 +53,7 @@
   <ns1:parameter name="schemaQualified" value="http://serice_impl,http://module"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://serice_impl"/>
   <ns1:parameter name="wsdlServiceElement" value="Student_Service_ImplService"/>
-  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns5:Student" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:module.Student" xmlns:ns5="http://module"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns7:Student" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:module.Student" xmlns:ns7="http://module"/>
  </ns1:service>
  <ns1:transport name="http">
   <ns1:requestFlow>

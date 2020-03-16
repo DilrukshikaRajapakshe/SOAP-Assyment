@@ -31,7 +31,9 @@
       <operation name="search" qname="operNS:search" xmlns:operNS="http://serice_impl" returnQName="retNS:searchReturn" xmlns:retNS="http://serice_impl" returnType="rtns:Student" xmlns:rtns="http://module" soapAction="" >
         <parameter qname="pns:id" xmlns:pns="http://serice_impl" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
-      <parameter name="allowedMethods" value="search insert delete"/>
+      <operation name="findAll" qname="operNS:findAll" xmlns:operNS="http://serice_impl" returnQName="retNS:findAllReturn" xmlns:retNS="http://serice_impl" returnType="rtns:Student" xmlns:rtns="http://module" soapAction="" >
+      </operation>
+      <parameter name="allowedMethods" value="search insert delete findAll"/>
 
       <typeMapping
         xmlns:ns="http://module"

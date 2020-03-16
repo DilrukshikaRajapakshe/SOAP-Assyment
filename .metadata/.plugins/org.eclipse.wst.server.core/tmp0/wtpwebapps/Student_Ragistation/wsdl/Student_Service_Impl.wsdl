@@ -49,6 +49,16 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      </sequence>
     </complexType>
    </element>
+   <element name="findAll">
+    <complexType/>
+   </element>
+   <element name="findAllResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="findAllReturn" type="tns1:Student"/>
+     </sequence>
+    </complexType>
+   </element>
   </schema>
   <schema elementFormDefault="qualified" targetNamespace="http://module" xmlns="http://www.w3.org/2001/XMLSchema">
    <complexType name="Student">
@@ -85,6 +95,14 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
+   <wsdl:message name="findAllRequest">
+
+      <wsdl:part element="impl:findAll" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
    <wsdl:message name="searchRequest">
 
       <wsdl:part element="impl:search" name="parameters">
@@ -104,6 +122,14 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
    <wsdl:message name="insertResponse">
 
       <wsdl:part element="impl:insertResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="findAllResponse">
+
+      <wsdl:part element="impl:findAllResponse" name="parameters">
 
       </wsdl:part>
 
@@ -142,6 +168,18 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
        </wsdl:input>
 
          <wsdl:output message="impl:searchResponse" name="searchResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="findAll">
+
+         <wsdl:input message="impl:findAllRequest" name="findAllRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:findAllResponse" name="findAllResponse">
 
        </wsdl:output>
 
@@ -200,6 +238,24 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
          </wsdl:input>
 
          <wsdl:output name="searchResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="findAll">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="findAllRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="findAllResponse">
 
             <wsdlsoap:body use="literal"/>
 

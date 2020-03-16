@@ -20,10 +20,21 @@ valid = false;
 %>
 <FORM METHOD="POST" ACTION="Result.jsp" TARGET="result">
 <INPUT TYPE="HIDDEN" NAME="method" VALUE="<%=org.eclipse.jst.ws.util.JspUtils.markup(method)%>">
+<BR>
+<INPUT TYPE="SUBMIT" VALUE="Invoke">
+<INPUT TYPE="RESET" VALUE="Clear">
+</FORM>
+<%
+break;
+case 5:
+valid = false;
+%>
+<FORM METHOD="POST" ACTION="Result.jsp" TARGET="result">
+<INPUT TYPE="HIDDEN" NAME="method" VALUE="<%=org.eclipse.jst.ws.util.JspUtils.markup(method)%>">
 <TABLE>
 <TR>
 <TD COLSPAN="1" ALIGN="LEFT">id:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="id5" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="id8" SIZE=20></TD>
 </TR>
 </TABLE>
 <BR>
@@ -32,7 +43,7 @@ valid = false;
 </FORM>
 <%
 break;
-case 7:
+case 10:
 valid = false;
 %>
 <FORM METHOD="POST" ACTION="Result.jsp" TARGET="result">
@@ -40,19 +51,19 @@ valid = false;
 <TABLE>
 <TR>
 <TD COLSPAN="1" ALIGN="LEFT">id:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="id10" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="id13" SIZE=20></TD>
 </TR>
 </TABLE>
 <TABLE>
 <TR>
 <TD COLSPAN="1" ALIGN="LEFT">name:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="name12" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="name15" SIZE=20></TD>
 </TR>
 </TABLE>
 <TABLE>
 <TR>
 <TD COLSPAN="1" ALIGN="LEFT">age:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="age14" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="age17" SIZE=20></TD>
 </TR>
 </TABLE>
 <BR>
@@ -61,7 +72,7 @@ valid = false;
 </FORM>
 <%
 break;
-case 16:
+case 19:
 valid = false;
 %>
 <FORM METHOD="POST" ACTION="Result.jsp" TARGET="result">
@@ -69,9 +80,20 @@ valid = false;
 <TABLE>
 <TR>
 <TD COLSPAN="1" ALIGN="LEFT">id:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="id25" SIZE=20></TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="id28" SIZE=20></TD>
 </TR>
 </TABLE>
+<BR>
+<INPUT TYPE="SUBMIT" VALUE="Invoke">
+<INPUT TYPE="RESET" VALUE="Clear">
+</FORM>
+<%
+break;
+case 30:
+valid = false;
+%>
+<FORM METHOD="POST" ACTION="Result.jsp" TARGET="result">
+<INPUT TYPE="HIDDEN" NAME="method" VALUE="<%=org.eclipse.jst.ws.util.JspUtils.markup(method)%>">
 <BR>
 <INPUT TYPE="SUBMIT" VALUE="Invoke">
 <INPUT TYPE="RESET" VALUE="Clear">

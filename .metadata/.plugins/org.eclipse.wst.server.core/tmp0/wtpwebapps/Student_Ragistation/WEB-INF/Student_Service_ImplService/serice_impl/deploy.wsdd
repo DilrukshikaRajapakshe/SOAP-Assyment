@@ -21,7 +21,9 @@
       <operation xmlns:operNS="http://serice_impl" xmlns:retNS="http://serice_impl" xmlns:rtns="http://module" name="search" qname="operNS:search" returnQName="retNS:searchReturn" returnType="rtns:Student" soapAction="">
         <parameter xmlns:pns="http://serice_impl" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:int"/>
       </operation>
-      <parameter name="allowedMethods" value="search insert delete"/>
+      <operation xmlns:operNS="http://serice_impl" xmlns:retNS="http://serice_impl" xmlns:rtns="http://module" name="findAll" qname="operNS:findAll" returnQName="retNS:findAllReturn" returnType="rtns:Student" soapAction="">
+      </operation>
+      <parameter name="allowedMethods" value="search insert delete findAll"/>
 
       <typeMapping xmlns:ns="http://module" qname="ns:Student" type="java:module.Student" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
   </service>
