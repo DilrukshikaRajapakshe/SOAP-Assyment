@@ -1,0 +1,152 @@
+<%@page contentType="text/html;charset=UTF-8"%>
+<% request.setCharacterEncoding("UTF-8"); %>
+<HTML>
+<HEAD>
+<TITLE>Result</TITLE>
+</HEAD>
+<BODY>
+<H1>Result</H1>
+
+<jsp:useBean id="sampleStudent_Service_ImplProxyid" scope="session" class="serice_impl.Student_Service_ImplProxy" />
+<%
+if (request.getParameter("endpoint") != null && request.getParameter("endpoint").length() > 0)
+sampleStudent_Service_ImplProxyid.setEndpoint(request.getParameter("endpoint"));
+%>
+
+<%
+String method = request.getParameter("method");
+int methodID = 0;
+if (method == null) methodID = -1;
+
+if(methodID != -1) methodID = Integer.parseInt(method);
+boolean gotMethod = false;
+
+try {
+switch (methodID){ 
+case 2:
+        gotMethod = true;
+        serice_impl.Student_Service_Impl getStudent_Service_Impl2mtemp = sampleStudent_Service_ImplProxyid.getStudent_Service_Impl();
+if(getStudent_Service_Impl2mtemp == null){
+%>
+<%=getStudent_Service_Impl2mtemp %>
+<%
+}else{
+        if(getStudent_Service_Impl2mtemp!= null){
+        String tempreturnp3 = getStudent_Service_Impl2mtemp.toString();
+        %>
+        <%=tempreturnp3%>
+        <%
+        }}
+break;
+case 5:
+        gotMethod = true;
+        String id_0id=  request.getParameter("id8");
+        int id_0idTemp  = Integer.parseInt(id_0id);
+        boolean delete5mtemp = sampleStudent_Service_ImplProxyid.delete(id_0idTemp);
+        String tempResultreturnp6 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(delete5mtemp));
+        %>
+        <%= tempResultreturnp6 %>
+        <%
+break;
+case 10:
+        gotMethod = true;
+        String id_1id=  request.getParameter("id13");
+        int id_1idTemp  = Integer.parseInt(id_1id);
+        String name_2id=  request.getParameter("name15");
+            java.lang.String name_2idTemp = null;
+        if(!name_2id.equals("")){
+         name_2idTemp  = name_2id;
+        }
+        String age_3id=  request.getParameter("age17");
+        int age_3idTemp  = Integer.parseInt(age_3id);
+        boolean insert10mtemp = sampleStudent_Service_ImplProxyid.insert(id_1idTemp,name_2idTemp,age_3idTemp);
+        String tempResultreturnp11 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(insert10mtemp));
+        %>
+        <%= tempResultreturnp11 %>
+        <%
+break;
+case 19:
+        gotMethod = true;
+        String id_4id=  request.getParameter("id28");
+        int id_4idTemp  = Integer.parseInt(id_4id);
+        module.Student search19mtemp = sampleStudent_Service_ImplProxyid.search(id_4idTemp);
+if(search19mtemp == null){
+%>
+<%=search19mtemp %>
+<%
+}else{
+%>
+<TABLE>
+<TR>
+<TD COLSPAN="3" ALIGN="LEFT">returnp:</TD>
+<TR>
+<TD WIDTH="5%"></TD>
+<TD COLSPAN="2" ALIGN="LEFT">age:</TD>
+<TD>
+<%
+if(search19mtemp != null){
+%>
+<%=search19mtemp.getAge()
+%><%}%>
+</TD>
+<TR>
+<TD WIDTH="5%"></TD>
+<TD COLSPAN="2" ALIGN="LEFT">name:</TD>
+<TD>
+<%
+if(search19mtemp != null){
+java.lang.String typename24 = search19mtemp.getName();
+        String tempResultname24 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typename24));
+        %>
+        <%= tempResultname24 %>
+        <%
+}%>
+</TD>
+<TR>
+<TD WIDTH="5%"></TD>
+<TD COLSPAN="2" ALIGN="LEFT">id:</TD>
+<TD>
+<%
+if(search19mtemp != null){
+%>
+<%=search19mtemp.getId()
+%><%}%>
+</TD>
+</TABLE>
+<%
+}
+break;
+case 30:
+        gotMethod = true;
+        module.Student[] findAll30mtemp = sampleStudent_Service_ImplProxyid.findAll();
+if(findAll30mtemp == null){
+%>
+<%=findAll30mtemp %>
+<%
+}else{
+        String tempreturnp31 = null;
+        if(findAll30mtemp != null){
+        java.util.List listreturnp31= java.util.Arrays.asList(findAll30mtemp);
+        tempreturnp31 = listreturnp31.toString();
+        }
+        %>
+        <%=tempreturnp31%>
+        <%
+}
+break;
+}
+} catch (Exception e) { 
+%>
+Exception: <%= org.eclipse.jst.ws.util.JspUtils.markup(e.toString()) %>
+Message: <%= org.eclipse.jst.ws.util.JspUtils.markup(e.getMessage()) %>
+<%
+return;
+}
+if(!gotMethod){
+%>
+result: N/A
+<%
+}
+%>
+</BODY>
+</HTML>

@@ -3,7 +3,7 @@
 ## Student Registation Using SOAP web sevice and wso2 ESB bus implimantation
 ### Sevice Informaion
 #### Four EndPoin
-#### 1. FinAll
+#### 1. FindAll
 #### 2. Search
 #### 3. Delete
 #### 4. Insert
